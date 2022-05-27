@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import NavBar from './components/NavBar/NavBar.js';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+import Footer from './components/Footer/Footer.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <NavBar />
+      
+        {/* <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -16,8 +22,11 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
+      <ItemListContainer greeting='Hola Coders' />
+
+      <Footer />
     </div>
   );
 }
