@@ -1,0 +1,1 @@
+export const navBarOptions = [{id: 1, category: 'cardio'}, {id: 2, category: 'combos'}, {id: 3, category: 'pilates'}, {id: 4, category: 'aire libre'}, {id: 5, category: 'musculacion'}, {id: 6, category: 'peso libre'}];

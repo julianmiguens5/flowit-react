@@ -24,7 +24,7 @@ function App() {
           Learn React
         </a> */}
       </header>
-      <ItemListContainer greeting='Hola Coders' />
+      <ItemListContainer greeting='Productos' />
 
       <Footer />
     </div>
