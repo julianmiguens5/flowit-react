@@ -30,17 +30,45 @@ ul{
   display: flex;
 }
 
-nav ul li{
+.categories{
+  display: flex;
+}
+
+.categories a{
   display: inline;
-  list-style-type: none;
   margin: 0 10px;
   cursor: pointer;
   transition: 0.5s;
   text-transform: uppercase;
+  color: white;
+  text-decoration: none;
 }
 
-nav ul li:hover{
+.categories a:hover{
   color: red;
+}
+
+.ActiveCategory{
+  color: red !important;
+  background-color: white;
+  padding: 0px 5px;
+}
+
+.grillaProd{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px;
+}
+
+.grillaProd li{
+  height: 450px;
+}
+
+.grillaProd a{
+  text-decoration: none;
+  color: black;
 }
 
 .greeting{
@@ -49,6 +77,42 @@ nav ul li:hover{
 }
 
 /* PRODUCTOS */
+
+.spinnerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  animation: spinner-plncf9 4s infinite;
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  border: 9px solid;
+  border-radius: 50%;
+  border-color: red red #0000 #0000;
+  mix-blend-mode: darken;
+  animation: spinner-plncf9 1s infinite linear;
+}
+
+.spinner::after {
+  border-color: #0000 #0000 #dbdcef #dbdcef;
+  animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+  100% {
+     transform: rotate(1turn);
+  }
+}
 
 ul li{
   display: inline;
@@ -71,6 +135,12 @@ padding: 8px;
 width: 200px;
 }
 
+.ItemLi:hover{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.74);
+-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.74);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.74);
+}
+
 .itemImg{
   width: 100%;
 }
@@ -78,6 +148,12 @@ width: 200px;
 .ItemLi p{
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.fichaProd{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 footer{
