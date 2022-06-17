@@ -16,7 +16,7 @@ const ItemListContainer = (props) => {
 
         if(!category) {
             getProducts().then(response => {
-                setProducts(response);
+                setProducts(response)
             }).catch(error => {
                 console.log(error)
             }).finally(() => {

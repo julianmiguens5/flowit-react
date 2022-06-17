@@ -7,7 +7,7 @@ const Item = ({category, name, img, price,id })  => {
             <img className="itemImg" src={img} alt={name} />
             <h5>{category}</h5>
             <p>{name}</p>
-            <p>$ {price}</p>
+            <p>{price}</p>
             </li>
         </Link>
     )
