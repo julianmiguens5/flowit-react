@@ -6,8 +6,6 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [totalQuantity, setTotalQuantity] = useState(0);
 
-    console.log(cart)
-
     useEffect(() => {
         let totalQuantity = 0;
         cart.forEach(prod => {
@@ -31,13 +29,28 @@ export const CartProvider = ({ children }) => {
         return cart.some(prod => prod.id === id)
     }
 
+    const getTotal = () => {
+        let total = 0
+        cart.forEach(prod => {
+            total += prod.quantity * prod.price
+        })
+        
+        return total
+    }
+
+    const clearCart = () => {
+        setCart([])
+    }
+
     return (
         <CartContext.Provider value={{ 
             cart,
             totalQuantity, 
             addItem,
             removeItem,
-            isInCart
+            isInCart,
+            getTotal,
+            clearCart
         }}>
             { children }
         </CartContext.Provider>

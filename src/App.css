@@ -223,6 +223,11 @@ width: 200px;
   justify-content: center;
 }
 
+.ItemHeaderCartItem{
+  font-weight: bold;
+  text-align: left;
+}
+
 footer{
   position: absolute;
   background-color: black;
