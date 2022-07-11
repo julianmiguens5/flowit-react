@@ -7,11 +7,13 @@ import Footer from './components/Footer/Footer.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import { NotificationProvider } from './notification/Notification'
 
 function App() {
 
   return (
     <div className="App">
+    <NotificationProvider>
     <CartProvider> 
       <BrowserRouter>
         <header className="App-header">
@@ -26,6 +28,7 @@ function App() {
         
       </BrowserRouter>
     </CartProvider> 
+    </NotificationProvider>
     <Footer />
     </div>
   );

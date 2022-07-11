@@ -31,24 +31,6 @@ const ItemListContainer = (props) => {
             setLoading(false)
         })
 
-        /* if(!category) {
-            getProducts().then(response => {
-                setProducts(response)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-        } else {
-            getProductsByCategory(category).then(response => {
-                setProducts(response)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-        } */
-
 
     }, [category])
 

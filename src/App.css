@@ -228,6 +228,35 @@ width: 200px;
   text-align: left;
 }
 
+.Success {
+  background-color: green;
+  padding: 20px;
+}
+
+.Error {
+  background-color: red;
+  padding: 20px;
+}
+
+.formCompra{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.formCompra input {
+  width: 40%;
+}
+
+.btnForm{
+  margin-bottom: 15px;
+}
+
 footer{
   position: absolute;
   background-color: black;
