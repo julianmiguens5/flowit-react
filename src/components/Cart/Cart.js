@@ -22,10 +22,6 @@ export const Cart = () => {
     const handleSubmit = event => {
         event.preventDefault();
         document.getElementById("checkOut").style.display = "block";
-        setName('');
-        setEmail('');
-        setPhone('');
-        setAddress('');
     };
 
     const handleCreateOrder = () => {
@@ -83,6 +79,10 @@ export const Cart = () => {
                     }
                 }).finally(() => {
                     setLoading(false)
+                    setName('');
+                    setEmail('');
+                    setPhone('');
+                    setAddress('');
                 })        
     }
     

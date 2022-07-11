@@ -17,6 +17,7 @@ Instalar dependencias
 Ejecutar el servidor de desarrollo.
 
 ![Gif](public/flowit-gif.gif)
+![Jpg](public/firebase.jpg)
 
 ### `npm test`
 
