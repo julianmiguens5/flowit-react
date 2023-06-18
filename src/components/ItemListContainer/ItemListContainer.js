@@ -1,7 +1,9 @@
 import { useState, useEffect} from 'react';
-import { getProducts, getProductsByCategory } from '../asyncprod';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+
+import { getDocs, collection, query, where } from "firebase/firestore";
+import db from '../../services/firebase';
 
 const ItemListContainer = (props) => {
 
@@ -14,23 +16,22 @@ const ItemListContainer = (props) => {
     useEffect(() => {
         setLoading(true)
 
-        if(!category) {
-            getProducts().then(response => {
-                setProducts(response);
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
+        const collectionRef = category ? (
+            query(collection(db, 'products'), where('category', '==', category), where('enabled', '==', true)) 
+        ) : collection(db, 'products');
+
+        getDocs(collectionRef).then(response => {
+            const productsFromFirebase = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data() }
             })
-        } else {
-            getProductsByCategory(category).then(response => {
-                setProducts(response)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-        }
+            setProducts(productsFromFirebase)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
+        })
+
+
     }, [category])
 
     if(loading) {
